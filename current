@@ -1,4 +1,4 @@
-{"name"  : "AnalyticsAvro",
+{"name"  : "AnalyticsAvro", 
  "type": "record",
  "namespace" : "com.twc.eg.analytics",
  "fields": [
@@ -38,6 +38,7 @@
   {"name": "device_formFactor",                  "type": "string"},
   {"name": "device_build",                       "type": ["null", "string"], "default": null},
   {"name": "device_id",                          "type": ["null", "string"], "default": null},
+  {"name": "device_adId",                        "type": ["null", "string"], "default": null},
 
   {"name": "network_type",                       "type": ["null", "string"], "default": null},
   {"name": "network_cellCarrier",                "type": ["null", "string"], "default": null},
@@ -66,17 +67,14 @@
   {"name": "linear_channelId",                   "type": ["null", "string"], "default": null},
   {"name": "linear_channelNumber",               "type": ["null", "string"], "default": null},
 
-  {"name": "entitled",                           "type": ["null", "boolean"], "default": null},
   {"name": "favorite",                           "type": ["null", "boolean"], "default": null},
-  {"name": "parentallyLocked",                   "type": ["null", "boolean"], "default": null},
 
   {"name": "showable",                           "type": ["null", "string"], "default": null},
-  {"name": "startable",                          "type": ["null", "string"], "default": null},
 
-  {"name": "breadcrumb_names",                   "type": ["null", {"type": "array", "items": {"name": "bcname", "type": "string"}}], "default": null},
-  {"name": "breadcrumb_columns",                 "type": ["null", {"type": "array", "items": {"name": "column", "type": "int"}}], "default": null},
-  {"name": "breadcrumb_rows",                    "type": ["null", {"type": "array", "items": {"name": "row", "type": "int"}}], "default": null},
-  {"name": "breadcrumb_pageNumbers",             "type": ["null", {"type": "array", "items": {"name": "pageNumber", "type": "int"}}], "default": null},
+  {"name": "breadcrumb_names",                   "type": ["null", {"type": "array", "items": {"name": "bcname", "type": "string"}}], "default": null}, 
+  {"name": "breadcrumb_columns",                 "type": ["null", {"type": "array", "items": {"name": "column", "type": "int"}}], "default": null}, 
+  {"name": "breadcrumb_rows",                    "type": ["null", {"type": "array", "items": {"name": "row", "type": "int"}}], "default": null}, 
+  {"name": "breadcrumb_pageNumbers",             "type": ["null", {"type": "array", "items": {"name": "pageNumber", "type": "int"}}], "default": null}, 
 
   {"name": "otherDeviceName",                    "type": ["null", "string"], "default": null},
   {"name": "switchScreen_direction",             "type": ["null", "string"], "default": null},
@@ -90,10 +88,7 @@
   {"name": "triggeredBy",                        "type": ["null", "string"], "default": null},
   {"name": "agreement",                          "type": ["null", "string"], "default": null},
   {"name": "button",                             "type": ["null", "string"], "default": null},
-  {"name": "stb_isDvr",                          "type": ["null", "boolean"], "default": null},
-  {"name": "stb_name",                           "type": ["null", "string"], "default": null},
-  {"name": "stb_deviceId",                       "type": ["null", "string"], "default": null},
-  {"name": "stb_oldName",                        "type": ["null", "string"], "default": null},
+  {"name": "pageNumber",                         "type": ["null", "int"], "default": null},
   {"name": "filterBy",                           "type": ["null", "string"], "default": null},
 
   {"name": "docsis_version",                     "type": ["null", "string"], "default": null},
@@ -130,8 +125,6 @@
   {"name": "playback_currentBitrateMbpsBucket",  "type": ["null", "int"], "default": null},
   {"name": "playback_bufferingStartedTime",      "type": ["null", "long"], "default": null},
   {"name": "playback_scrubType",                 "type": ["null", "string"], "default": null},
-  {"name": "playback_scrubUri",                  "type": ["null", "string"], "default": null},
-  {"name": "playback_scrubSpeed",                "type": ["null", "double"], "default": null},
   {"name": "playback_scrubJump",                 "type": ["null", "boolean"], "default": null},
   {"name": "playback_previousContentElapsedMs",  "type": ["null", "string"], "default": null},
   {"name": "playback_bufferingTimeMs",           "type": ["null", "int"], "default": null},
@@ -182,7 +175,7 @@
   {"name": "asset_availableDate",                "type": ["null", "long"], "default": null},
   {"name": "asset_expirationDate",               "type": ["null", "long"], "default": null},
   {"name": "asset_originalAirDate",              "type": ["null", "long"], "default": null},
-  {"name": "asset_genres",                       "type": ["null", {"type": "array", "items": {"name": "genre", "type": "string"}}], "default": null},
+  {"name": "asset_genres",                       "type": ["null", {"type": "array", "items": {"name": "genre", "type": "string"}}], "default": null}, 
   {"name": "asset_actors",                       "type": ["null", {"type": "array", "items": {"name": "actor", "type": "string"}}], "default": null},
   {"name": "asset_studios",                      "type": ["null", {"type": "array", "items": {"name": "studio", "type": "string"}}], "default": null},
 
@@ -208,6 +201,8 @@
   {"name": "account_market",                     "type": ["null", "string"], "default": null},
   {"name": "account_region",                     "type": ["null", "string"], "default": null},
   {"name": "account_iptvTrial",                  "type": ["null", "boolean"], "default": null},
+  {"name": "account_accessibility",              "type": ["null", "boolean"], "default": null},
+  {"name": "account_cdvr",                       "type": ["null", "boolean"], "default": null},
 
 
   {"name": "user_guid",                          "type": ["null", "string"], "default": null},
@@ -223,9 +218,10 @@
   {"name": "rental_expirationDate",              "type": ["null", "long"], "default": null},
 
   {"name": "pin_type",                           "type": ["null", "string"], "default": null},
-  {"name": "pin_result",                         "type": ["null", "string"], "default": null},
+  {"name": "operation_result",                   "type": ["null", "string"], "default": null},
 
   {"name": "contentClass",                       "type": ["null", "string"], "default": null},
+  {"name": "crudOp",                             "type": ["null", "string"], "default": null},
 
   {"name": "geoIp_ip",                           "type": ["null", "string"], "default": null},
   {"name": "geoIp_countryCode",                  "type": ["null", "string"], "default": null},
